@@ -1,4 +1,4 @@
-def sortColors(arr):
+def Numbers (arr):
     low, mid, high = 0, 0, len(arr) - 1
     
     while mid <= high:
@@ -14,4 +14,4 @@ def sortColors(arr):
     return arr
 
 arr = [0, 1, 2, 1, 0, 2, 1, 0]
-print(sortColors(arr))
+print(Numbers(arr))
