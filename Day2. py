@@ -1,0 +1,8 @@
+def missing_number(arr):
+    n = len(arr) + 1
+    total_sum = n*(n+1)//2
+    array_sum = sum(arr)
+    return total_sum - array_sum
+arr = [1,2,3,4]
+print("missing number is:",missing_number(arr))
+    
