@@ -1,0 +1,19 @@
+def Duplicate(nums):
+    left, right = 1,len(nums) -1
+    duplicate = -1
+
+    while left <= right:
+        mid = (left + right) // 2
+        count = sum (num <= mid for num in nums)
+        if count > mid:
+           duplicate = mid
+           right = mid - 1
+
+        else:
+           left = mid + 1
+    return duplicate 
+
+
+arr = [3,1,3,4,2]
+print("duplicate number is:",Duplicate (arr))
+
