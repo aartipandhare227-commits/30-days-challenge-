@@ -1,0 +1,14 @@
+def trap(hight):
+    n=len(hight)
+    water=0
+
+    for i in range(n):
+        left_max = max (hight[:i+1])
+        right_max = max (hight[i:])
+
+        water+= min(left_max,right_max)-hight[i]
+
+    return water
+
+hight= [0,1,0,2,1,0,1,3,2,1,2,1]
+print("trapped water:", trap(hight))
