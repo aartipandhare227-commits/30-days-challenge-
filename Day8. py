@@ -1,0 +1,9 @@
+def reversewords(s:str)->str:
+
+    words = s.split()
+    words.reverse()
+
+    return " " .join(words)
+
+s = "the sky is blue" 
+print(reversewords(s))
