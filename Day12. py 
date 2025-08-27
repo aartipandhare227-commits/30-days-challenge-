@@ -1,0 +1,14 @@
+def longestPalindrome(s):
+    n = len(s)
+    ans = ""
+    
+    for i in range(n):
+        for j in range(i, n):
+            part = s[i:j+1]
+            if part == part[::-1]:   
+                if len(part) > len(ans):
+                    ans = part
+    return ans
+
+print(longestPalindrome("babad"))  # bab or aba
+print(longestPalindrome("cbbd"))   # bb
