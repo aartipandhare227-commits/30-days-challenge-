@@ -1,0 +1,27 @@
+def count_substrings_exact_k_distinct(s: str, k: int) -> int:
+   
+    def at_most(k: int) -> int:
+        if k < 0:
+            return 0
+        freq = {}
+        left = 0
+        ans = 0
+        for right, ch in enumerate(s):
+            freq[ch] = freq.get(ch, 0) + 1
+            
+            while len(freq) > k:
+                freq[s[left]] -= 1
+                if freq[s[left]] == 0:
+                    del freq[s[left]]
+                left += 1
+            
+            ans += (right - left + 1)
+        return ans
+
+    return at_most(k) - at_most(k - 1)
+
+
+
+s = "pqpqs"
+k = 2
+print(count_substrings_exact_k_distinct(s, k))  # -> 7
